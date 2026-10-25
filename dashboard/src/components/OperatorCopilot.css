@@ -1,0 +1,85 @@
+/* Operator Copilot — matches the BTMS monochrome neobrutalist glass theme.
+   Entity colours are the only hues besides alert colours, so highlights read at a glance. */
+
+.oc-card {
+  background: var(--glass-2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid var(--glass-border-bright);
+  border-radius: var(--r-xl);
+  padding: var(--gap-lg);
+  box-shadow: var(--neo-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.oc-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.oc-title { display: block; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--bw-1000); }
+.oc-sub { display: block; font-size: 10px; color: var(--bw-500); letter-spacing: 0.06em; margin-top: 2px; }
+.oc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--bw-400); margin-top: 4px; }
+.oc-dot.on { background: var(--ok); box-shadow: 0 0 8px var(--ok); }
+.oc-dot.off { background: var(--crit); }
+
+.oc-narr { border: 1px solid var(--glass-border); border-left: 3px solid var(--ok); border-radius: var(--r-sm); padding: 8px 10px; background: var(--glass-1); }
+.oc-narr.warning { border-left-color: var(--warn); }
+.oc-narr.critical { border-left-color: var(--crit); }
+.oc-narr-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; color: var(--bw-500); }
+.oc-narr p { margin: 4px 0 0; font-size: 12px; line-height: 1.45; color: var(--bw-800); }
+
+.oc-log { display: flex; flex-direction: column; gap: 10px; max-height: 340px; min-height: 120px; overflow-y: auto; padding-right: 4px; }
+.oc-empty { font-size: 12px; color: var(--bw-500); padding: 14px 4px; }
+.oc-typing { font-size: 11px; color: var(--bw-500); font-family: var(--font-mono); }
+
+.oc-msg { display: flex; }
+.oc-user { justify-content: flex-end; }
+.oc-bot { justify-content: flex-start; }
+.oc-bubble { max-width: 94%; border-radius: var(--r-sm); padding: 8px 10px; font-size: 12.5px; line-height: 1.5; }
+.oc-user .oc-bubble { background: var(--glass-3); border: 1px solid var(--glass-border-bright); color: var(--bw-1000); }
+.oc-bot .oc-bubble { background: var(--glass-1); border: 1px solid var(--glass-border); color: var(--bw-800); }
+.oc-reply { white-space: pre-wrap; }
+
+.oc-ent { border-bottom: 2px solid currentColor; padding: 0 1px; border-radius: 2px; }
+.oc-ent sup { font-family: var(--font-mono); font-size: 7.5px; margin-left: 2px; opacity: 0.85; letter-spacing: 0.04em; }
+.oc-ent-CELL   { color: hsl(200, 85%, 66%); }
+.oc-ent-VALUE  { color: hsl(48, 90%, 62%); }
+.oc-ent-UNIT   { color: hsl(48, 60%, 52%); }
+.oc-ent-METRIC { color: hsl(280, 70%, 74%); }
+.oc-ent-CMP    { color: hsl(20, 90%, 66%); }
+.oc-ent-PARAM  { color: hsl(165, 65%, 56%); }
+.oc-ent-TICK   { color: hsl(220, 80%, 74%); }
+.oc-ent-FAULT  { color: hsl(0, 82%, 68%); }
+.oc-ent-COMP   { color: hsl(330, 70%, 72%); }
+.oc-ent-ACTION { color: hsl(120, 55%, 62%); }
+
+.oc-meta { display: flex; gap: 8px; align-items: center; margin-top: 6px; font-family: var(--font-mono); font-size: 9.5px; color: var(--bw-500); }
+.oc-intent { border: 1px solid var(--glass-border-bright); border-radius: 3px; padding: 0 5px; color: var(--bw-700); }
+.oc-link { background: none; border: none; color: var(--bw-500); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; margin-left: auto; }
+.oc-link:hover { color: var(--bw-1000); }
+
+.oc-trace { margin-top: 8px; border-top: 1px dashed var(--glass-border); padding-top: 8px; }
+.oc-trace-row { display: flex; flex-wrap: wrap; gap: 4px; }
+.oc-tok { display: flex; flex-direction: column; align-items: center; border: 1px solid var(--glass-border); border-radius: 3px; padding: 2px 5px; min-width: 34px; }
+.oc-tok-w { font-size: 11px; color: var(--bw-1000); }
+.oc-tok-pos { font-family: var(--font-mono); font-size: 8.5px; color: var(--bw-500); }
+.oc-tok-chunk { font-family: var(--font-mono); font-size: 8.5px; color: var(--bw-400); }
+.oc-tok-tag { font-family: var(--font-mono); font-size: 8.5px; color: var(--bw-400); }
+.oc-tok-tag.on { color: hsl(48, 90%, 62%); font-weight: 700; }
+.oc-trace-note { margin-top: 6px; font-size: 10px; color: var(--bw-500); }
+.oc-trace-note code { color: var(--bw-700); font-family: var(--font-mono); }
+.oc-ents { margin: 6px 0 0; padding-left: 16px; font-size: 11px; color: var(--bw-600); }
+
+.oc-chips { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+.oc-chip { font-family: var(--font-mono); font-size: 10px; background: var(--glass-2); color: var(--bw-900); border: 1px solid var(--glass-border-bright); border-radius: 3px; padding: 1px 6px; cursor: pointer; }
+.oc-chip:hover { background: var(--glass-3); }
+
+.oc-suggest { display: flex; flex-wrap: wrap; gap: 5px; }
+.oc-sg { font-size: 10.5px; color: var(--bw-600); background: transparent; border: 1px solid var(--glass-border); border-radius: 999px; padding: 3px 9px; cursor: pointer; font-family: var(--font-sans); }
+.oc-sg:hover { color: var(--bw-1000); border-color: var(--glass-border-bright); }
+
+.oc-form { display: flex; gap: 6px; }
+.oc-form input { flex: 1; min-width: 0; background: var(--bw-50); color: var(--bw-1000); border: 1.5px solid var(--glass-border-bright); border-radius: var(--r-sm); padding: 8px 10px; font-size: 12.5px; font-family: var(--font-sans); outline: none; }
+.oc-form input:focus { border-color: var(--bw-1000); }
+.oc-form button { background: var(--bw-1000); color: var(--bw-0); font-weight: 700; border: none; border-radius: var(--r-sm); padding: 0 14px; cursor: pointer; font-family: var(--font-sans); box-shadow: var(--neo-shadow-sm); }
+.oc-form button:disabled { opacity: 0.4; cursor: default; }

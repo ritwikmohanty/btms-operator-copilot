@@ -6,6 +6,7 @@ import PackTrendChart from "../components/PackTrendChart";
 import ProfilePanel from "../components/ProfilePanel";
 import ExportButton from "../components/ExportButton";
 import ServiceHealthMonitor from "../components/ServiceHealthMonitor";
+import OperatorCopilot from "../components/OperatorCopilot";
 import EventTimeline, { createEvent } from "../components/EventTimeline";
 import CellDetailModal from "../components/CellDetailModal";
 import { useAuth } from "../auth/AuthContext";
@@ -375,6 +376,7 @@ export default function DashboardPage() {
         {/* Right column: recommendations + service health */}
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <RecommendationsPanel recommendation={recommendation} thermalStatus={thermalStatus} />
+          <OperatorCopilot cells={cells} onSelectCell={_setSelectedCell} />
           <ServiceHealthMonitor />
         </div>
       </main>

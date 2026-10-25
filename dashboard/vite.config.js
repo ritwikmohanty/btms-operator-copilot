@@ -12,6 +12,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
+      "/nlp": {
+        target: "http://localhost:8100",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/nlp/, ""),
+      },
       "/auth": {
         target: "http://localhost:9000",
         changeOrigin: true,
